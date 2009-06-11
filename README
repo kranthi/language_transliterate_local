@@ -1,3 +1,17 @@
-= Language Transliterate Local
+Language Transliterate 
 
-Description goes here
+ABOUT
+
+A Radiant Extension by kranthi Reddy that allows transliteration of content. 
+Languge Transliteration can be done in pages and page parts.
+It uses Google AJAX Languge API for building this extension
+
+Installation
+
+cd /path/to/radiant
+git clone  git://github.com/kranthi/language_transliterate_local.git          
+rake radiant:extensions:language_transliterate_local:update
+Restart your server and refresh the admin interface.
+
+
+

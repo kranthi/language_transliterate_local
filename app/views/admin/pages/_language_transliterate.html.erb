@@ -1,26 +1,30 @@
-
-
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-  <script type="text/javascript" src="/javascripts/language_transliterate.js">    </script>
-  <script type="text/javascript" src="/javascripts/jquery-1.3.2.min.js">    </script>
+<script type="text/javascript" src="/javascripts/language_transliterate.js">    </script>
+<script type="text/javascript" src="/javascripts/jquery-1.3.2.min.js">    </script>
 <script>
      jQuery.noConflict();
 </script>
-  <script type="text/javascript" src="/javascripts/jq_connect/jquery.connect.js">    </script>
+<script type="text/javascript" src="/javascripts/jquery.connect.js">    </script>
 <script>
  function add_language_tranliterate(){
     var partName = $F('part-name-field');
-    var textarea_id = 'part_'+partName+'_content';
+    var textarea_id = 'part_'+partName+'_content'; 
     transliterationControl.makeTransliteratable([textarea_id]);
+    document.getElementById(textarea_id).style.height = "280px";
+
  }
  jQuery(document).ready(function(){
-    jQuery.connect(tabControl, 'addTab', add_language_tranliterate);
+             var textarea_elem = document.getElementsByTagName('textarea')
+             var i =0;
+             for(i=0;i<textarea_elem.length;i++){textarea_elem[i].style.height="280px";}
+	     jQuery.connect(tabControl, 'addTab', add_language_tranliterate);
+			 
  });
+
 </script>
- 
-  <center>Language literation enabled.Please uncheck the checkbox to return to english</center>
-    <div id='translControl'>
-      <input type="checkbox" id="checkboxId" onclick="javascript:checkboxClickHandler()"></input>
-      Type in <select id="languageDropDown" onchange="javascript:languageChangeHandler()"></select>
-    </div>
-    <br><div id="errorDiv"></div>
+ <div id="alert_msg" style="padding-bottom:10px;">Please uncheck the checkbox to return to english</div>
+<div id='translControl'>
+  <input type="checkbox" id="checkboxId" onclick="javascript:checkboxClickHandler()"></input>
+  Type in <select id="languageDropDown" onchange="javascript:languageChangeHandler()"></select>
+</div>
+<br><div id="errorDiv"></div>
