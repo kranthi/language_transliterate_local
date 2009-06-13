@@ -6,6 +6,8 @@ A Radiant Extension by kranthi Reddy that allows transliteration of content.
 Languge Transliteration can be done in pages and page parts.
 It uses Google AJAX Languge API for building this extension
 
+
+
 Installation
 
 cd /path/to/radiant
@@ -14,4 +16,28 @@ rake radiant:extensions:language_transliterate_local:update
 Restart your server and refresh the admin interface.
 
 
+Languages available for translation
+Albanian          Arabic
+Bulgarian         Catalan
+Chinese           Croatian
+Czech             Danish
+Dutch             English
+Estonian          Filipino
+Finnish           French
+Galician          German
+Greek             Hebrew
+Hindi             Hungarian
+Indonesian        Italian
+Japanese          Korean
+Latvian           Lithuanian
+Maltese           Norwegian
+Polish            Portuguese
+Romanian          Russian
+Serbian           Slovak
+Slovenian         Spanish
+Swedish           Thai
+Turkish           Ukrainian
+Vietnamese
 
+Precautions:
+The length of the text should be more than 18 charaters to ensure the translation is done correctly.
