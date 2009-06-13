@@ -17,8 +17,11 @@
           new google.elements.transliteration.TransliterationControl(options);
 
         // Enable transliteration in the textfields with the given ids.
-        var ids = [ "part_body_content", "part_extended_content" ];
-        transliterationControl.makeTransliteratable(ids);
+	var ids =[];
+        var textarea_array = document.getElementsByTagName('textarea');   
+	for(var i=0;i<textarea_array.length ;i++){                                                                                         
+	    ids[i] = textarea_array[i].id;                                                                                                  
+        }                                                                                                                                            transliterationControl.makeTransliteratable(ids);  
 
         // Add the STATE_CHANGED event handler to correcly maintain the state
         // of the checkbox.
