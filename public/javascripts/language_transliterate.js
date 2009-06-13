@@ -39,8 +39,10 @@
             serverReachableHandler);
 
         // Set the checkbox to the correct state.
-        document.getElementById('checkboxId').checked =
-          transliterationControl.isTransliterationEnabled();
+	//        document.getElementById('checkboxId').checked =          transliterationControl.isTransliterationEnabled();
+	if(document.getElementById('checkboxId').checked == false){
+	    transliterationControl.disableTransliteration();
+	}
 
         // Populate the language dropdown
         var destinationLanguage =
