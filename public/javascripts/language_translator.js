@@ -29,8 +29,12 @@ if (!result.error) {
 
 function detect_language(result,id,text){
 if (!result.error && result.language) {
-console.log(result.language,"source language",$('language_select').value);
+ var test_language = google.language.isTranslatable($('language_select').value);
+if(test_language == false){
+    alert("Translation is in progress for this language.Please try another one");
+      }else{
          google.language.translate(text, result.language, $('language_select').value, bind_scope(window,translated_handle,[id]));
+      }
     }
         
 }
@@ -60,5 +64,5 @@ for (l in google.language.Languages) {
     }
 }
 window.onload=populateList;
- google.setOnLoadCallback(translator);
+
 
