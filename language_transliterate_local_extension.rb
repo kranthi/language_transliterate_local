@@ -1,6 +1,3 @@
-# Uncomment this if you reference any of your controllers in activate
-# require_dependency 'application'
-
 class LanguageTransliterateLocalExtension < Radiant::Extension
   version "1.0"
   description "Describe your extension here"
@@ -14,7 +11,7 @@ class LanguageTransliterateLocalExtension < Radiant::Extension
   
   def activate
      admin.page.edit.add(:form, "language_transliterate", :after => 'edit_extended_metadata') 
-    # admin.tabs.add "Language Transliterate Local", "/admin/language_transliterate_local", :after => "Layouts", :visibility => [:all]
+     admin.page.edit.add(:form, "language_translate", :after => 'edit_buttons') 
   end
   
   def deactivate
